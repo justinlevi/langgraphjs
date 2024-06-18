@@ -42,7 +42,6 @@ import {
   INTERRUPT,
   TAG_HIDDEN,
 } from "../constants.js";
-import { initializeAsyncLocalStorageSingleton } from "../setup/async_local_storage.js";
 import {
   All,
   PregelExecutableTask,
@@ -221,8 +220,8 @@ export type PregelInputType = any;
 export type PregelOutputType = any;
 
 export class Pregel<
-    const Nn extends StrRecord<string, PregelNode>,
-    const Cc extends StrRecord<string, BaseChannel>
+    Nn extends StrRecord<string, PregelNode>,
+    Cc extends StrRecord<string, BaseChannel>
   >
   extends Runnable<PregelInputType, PregelOutputType, PregelOptions<Nn, Cc>>
   implements PregelInterface<Nn, Cc>
@@ -261,8 +260,6 @@ export class Pregel<
   constructor(fields: PregelInterface<Nn, Cc>) {
     super(fields);
 
-    // Initialize global async local storage instance for tracing
-    initializeAsyncLocalStorageSingleton();
     this.nodes = fields.nodes;
     this.channels = fields.channels;
     this.autoValidate = fields.autoValidate ?? this.autoValidate;

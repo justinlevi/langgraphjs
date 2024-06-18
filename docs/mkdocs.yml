@@ -1,6 +1,8 @@
-site_name: LangGraphJS
+site_name: LangGraph.js
 site_description: Build language agents as graphs
 site_url: https://langchain-ai.github.io/langgraphjs/
+repo_url: https://github.com/langchain-ai/langgraphjs
+edit_uri: edit/main/docs/docs/
 theme:
   name: material
   custom_dir: overrides
@@ -66,6 +68,7 @@ plugins:
 nav:
   - Home:
       - "index.md"
+      - Quick Start: tutorials/quickstart.ipynb
   - Tutorials:
       - "tutorials/index.md"
       - Use cases:
@@ -84,6 +87,9 @@ nav:
               - tutorials/rewoo/rewoo.ipynb
   - "How-to Guides":
       - "how-tos/index.md"
+      - Installation:
+          - "how-tos/manage-ecosystem-dependencies.ipynb"
+          - "how-tos/use-in-web-environments.ipynb"
       - Core:
           - "how-tos/persistence.ipynb"
           - "how-tos/time-travel.ipynb"

@@ -24,6 +24,7 @@
     "clean": "turbo run clean",
     "test": "turbo run test",
     "test:int": "turbo run test:int",
+    "test:exports:docker": "docker compose -f environment_tests/docker-compose.yml up --force-recreate",
     "format": "turbo run format",
     "format:check": "turbo run format:check",
     "release": "node scripts/release_workspace.js --workspace"
@@ -45,11 +46,12 @@
     "tsx": "^4.7.0",
     "turbo": "latest",
     "typedoc": "^0.25.13",
-    "typescript": "^5.4.5"
+    "typescript": "^4.9.5 || ^5.4.5"
   },
   "resolutions": {
     "@langchain/core": "0.2.3",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "typescript": "4.9.5"
   },
   "publishConfig": {
     "access": "public",
